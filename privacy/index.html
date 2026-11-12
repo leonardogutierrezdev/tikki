@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Política de privacidad de Tikki / Tikki privacy policy">
+<title>Tikki · Política de privacidad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { color-scheme: light; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+  /* Layout: una sola columna de lectura (~65 caracteres), encabezado con la marca y selector de idioma. */
+  :root {
+    --bg: #f6f8ee;
+    --surface: #ffffff;
+    --ink: #17190f;
+    --muted: #55594b;
+    --line: #dde2cf;
+    --accent: #3e6400;       /* lima oscuro, legible sobre claro */
+    --mark-bg: #16161e;      /* fondo del logo */
+    --mark: #c8f53c;         /* lima del logo */
+    --display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+    --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101016; --surface: #1a1b23; --ink: #f2f4ea; --muted: #a3a7b6; --line: #2a2c38; --accent: #c8f53c;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #101016; --surface: #1a1b23; --ink: #f2f4ea; --muted: #a3a7b6; --line: #2a2c38; --accent: #c8f53c;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 16px/1.65 var(--body);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 32px 64px;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+
+  header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand svg { flex: none; border-radius: 12px; }
+  .brand b { font: 800 22px/1 var(--display); letter-spacing: -0.01em; }
+
+  .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--surface); }
+  .lang a {
+    font: 600 13px/1 var(--body); color: var(--muted); text-decoration: none;
+    padding: 8px 14px; border-radius: 999px; min-width: 44px; text-align: center;
+  }
+  .lang a[aria-current="true"] { background: var(--mark-bg); color: var(--mark); }
+  .lang a:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  h1 { font: 800 clamp(30px, 6vw, 42px)/1.08 var(--display); letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+  .meta { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+
+  .summary {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+    padding: 20px 22px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .summary h2 { margin: 0; font: 700 13px/1.2 var(--body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .summary ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+
+  section { display: flex; flex-direction: column; gap: 8px; }
+  section h2 { font: 700 21px/1.25 var(--display); margin: 0; text-wrap: balance; }
+  section p, section ul { margin: 0; }
+  section ul { padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+
+  .contact { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .email {
+    font: 500 15px/1 ui-monospace, "SF Mono", Menlo, monospace; padding: 10px 12px;
+    border: 1px solid var(--line); border-radius: 10px; background: var(--surface);
+    user-select: all; word-break: break-all;
+  }
+  .contact button {
+    font: 600 14px/1 var(--body); padding: 10px 14px; min-height: 44px; border-radius: 10px; cursor: pointer;
+    border: 0; background: var(--mark-bg); color: var(--mark);
+  }
+  footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <svg width="44" height="44" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" fill="#16161e"></rect>
+        <circle cx="44" cy="30" r="10" fill="#c8f53c"></circle>
+        <polyline points="24 56 40 72 76 36" fill="none" stroke="#c8f53c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></polyline>
+      </svg>
+      <b>Tikki</b>
+    </div>
+    <nav class="lang" aria-label="Language / Idioma">
+      <a href="#es" id="tab-es" lang="es">Español</a>
+      <a href="#en" id="tab-en" lang="en">English</a>
+    </nav>
+  </header>
+
+  <!-- ESPAÑOL -->
+  <article id="es" lang="es">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div>
+        <h1>Política de privacidad</h1>
+        <p class="meta">Vigente desde el 12 de noviembre de 2026 · App Tikki para Android e iOS</p>
+      </div>
+
+      <div class="summary">
+        <h2>En resumen</h2>
+        <ul>
+          <li>Tikki no recopila, no vende y no comparte tus datos personales.</li>
+          <li>Tus hábitos se guardan solo en tu teléfono. No hay cuentas ni servidores.</li>
+          <li>La app no tiene anuncios ni herramientas de análisis o seguimiento.</li>
+        </ul>
+      </div>
+
+      <section>
+        <h2>Quién es responsable</h2>
+        <p>Tikki es una app desarrollada por Leonardo Gutiérrez, en San Pedro Sula, Honduras. En esta página explico qué pasa con la información que usas en la app.</p>
+      </section>
+
+      <section>
+        <h2>Qué información usa la app y dónde se guarda</h2>
+        <p>Para funcionar, Tikki guarda en el almacenamiento interno de tu teléfono:</p>
+        <ul>
+          <li>Los hábitos que creas: nombre, emoji y color.</li>
+          <li>Los días en que marcaste cada hábito.</li>
+          <li>Si compraste Tikki Premium.</li>
+          <li>Ajustes internos, como el último día en que viste la celebración de día completo.</li>
+        </ul>
+        <p>Esta información nunca sale de tu teléfono hacia mí ni hacia terceros. Se borra si desinstalas la app o borras sus datos desde los ajustes del teléfono. Si tienes activada la copia de seguridad del sistema (Google en Android o iCloud en iPhone), esa copia puede incluir los datos de la app según las condiciones de ese servicio.</p>
+      </section>
+
+      <section>
+        <h2>Widget de la pantalla de inicio</h2>
+        <p>Si agregas el widget de Tikki, la app le pasa tus hábitos de hoy y tus rachas para mostrarlos. Esa información también se queda dentro de tu teléfono.</p>
+      </section>
+
+      <section>
+        <h2>Compras dentro de la app</h2>
+        <p>Tikki Premium se compra con Google Play o con App Store. Ellos procesan el pago y sus datos. Yo no recibo tu nombre, tu correo ni tu tarjeta; la app solo recibe la confirmación de que la compra es válida para desbloquear Premium en tu teléfono. Consulta la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidad de Google</a> o la <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">de Apple</a>.</p>
+      </section>
+
+      <section>
+        <h2>Compartir tu racha</h2>
+        <p>Si tocas "Compartir mi racha", se abre el menú para compartir de tu teléfono con un texto sobre tu racha. Tú eliges con qué app y con quién compartirlo. Tikki no ve ni guarda lo que compartes.</p>
+      </section>
+
+      <section>
+        <h2>Permisos</h2>
+        <p>Tikki no pide acceso a tu cámara, micrófono, ubicación, contactos, fotos ni archivos.</p>
+      </section>
+
+      <section>
+        <h2>Niños</h2>
+        <p>Tikki no está dirigida a menores de 13 años. De todos modos, la app no recopila datos de nadie.</p>
+      </section>
+
+      <section>
+        <h2>Cambios a esta política</h2>
+        <p>Si la app cambia y empieza a usar datos de otra forma, por ejemplo si se agregan anuncios, actualizaré esta página y la fecha de arriba antes de publicar esa versión.</p>
+      </section>
+
+      <section>
+        <h2>Contacto</h2>
+        <p>Si tienes preguntas sobre esta política o sobre tus datos, escríbeme:</p>
+        <div class="contact">
+          <span class="email" id="email-es">leonardo.gutierrez.dev@gmail.com</span>
+          <button type="button" data-copy="email-es" data-done="Copiado">Copiar correo</button>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <!-- ENGLISH -->
+  <article id="en" lang="en">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Effective November 12, 2026 · Tikki app for Android and iOS</p>
+      </div>
+
+      <div class="summary">
+        <h2>The short version</h2>
+        <ul>
+          <li>Tikki does not collect, sell or share your personal data.</li>
+          <li>Your habits are stored only on your phone. There are no accounts and no servers.</li>
+          <li>The app has no ads and no analytics or tracking tools.</li>
+        </ul>
+      </div>
+
+      <section>
+        <h2>Who is responsible</h2>
+        <p>Tikki is developed by Leonardo Gutiérrez in San Pedro Sula, Honduras. This page explains what happens to the information you use in the app.</p>
+      </section>
+
+      <section>
+        <h2>What the app uses and where it is stored</h2>
+        <p>To work, Tikki stores the following in your phone's internal storage:</p>
+        <ul>
+          <li>The habits you create: name, emoji and color.</li>
+          <li>The days you checked off each habit.</li>
+          <li>Whether you bought Tikki Premium.</li>
+          <li>Internal settings, such as the last day you saw the "Day complete!" celebration.</li>
+        </ul>
+        <p>This information never leaves your phone to reach me or any third party. It is deleted if you uninstall the app or clear its data in your phone's settings. If you turned on your phone's system backup (Google on Android or iCloud on iPhone), that backup may include the app's data under that service's terms.</p>
+      </section>
+
+      <section>
+        <h2>Home screen widget</h2>
+        <p>If you add the Tikki widget, the app passes it today's habits and your streaks so it can show them. That information also stays on your phone.</p>
+      </section>
+
+      <section>
+        <h2>In-app purchases</h2>
+        <p>Tikki Premium is bought through Google Play or the App Store. They process the payment and its data. I don't receive your name, email or card details; the app only receives confirmation that the purchase is valid so it can unlock Premium on your phone. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a> or <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's</a>.</p>
+      </section>
+
+      <section>
+        <h2>Sharing your streak</h2>
+        <p>If you tap "Share my streak", your phone's share menu opens with a short text about your streak. You choose the app and the people to share it with. Tikki doesn't see or store what you share.</p>
+      </section>
+
+      <section>
+        <h2>Permissions</h2>
+        <p>Tikki doesn't ask for access to your camera, microphone, location, contacts, photos or files.</p>
+      </section>
+
+      <section>
+        <h2>Children</h2>
+        <p>Tikki is not directed at children under 13. In any case, the app doesn't collect data from anyone.</p>
+      </section>
+
+      <section>
+        <h2>Changes to this policy</h2>
+        <p>If the app changes and starts using data differently, for example if ads are added, I will update this page and the date above before releasing that version.</p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>If you have questions about this policy or your data, email me:</p>
+        <div class="contact">
+          <span class="email" id="email-en">leonardo.gutierrez.dev@gmail.com</span>
+          <button type="button" data-copy="email-en" data-done="Copied">Copy email</button>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <footer>© 2026 Leonardo Gutiérrez · Tikki</footer>
+</div>
+
+<script>
+  (function () {
+    var langs = ['es', 'en'];
+    function pick() {
+      var h = (location.hash || '').replace('#', '');
+      if (langs.indexOf(h) !== -1) return h;
+      var nav = (navigator.language || 'en').toLowerCase();
+      return nav.indexOf('es') === 0 ? 'es' : 'en';
+    }
+    function show() {
+      var cur = pick();
+      langs.forEach(function (l) {
+        document.getElementById(l).hidden = l !== cur;
+        document.getElementById('tab-' + l).setAttribute('aria-current', l === cur ? 'true' : 'false');
+      });
+      document.documentElement.lang = cur;
+    }
+    window.addEventListener('hashchange', show);
+    show();
+
+    document.querySelectorAll('[data-copy]').forEach(function (btn) {
+      var label = btn.textContent;
+      btn.addEventListener('click', function () {
+        var el = document.getElementById(btn.getAttribute('data-copy'));
+        var text = el.textContent.trim();
+        function done() { btn.textContent = btn.getAttribute('data-done'); setTimeout(function () { btn.textContent = label; }, 1800); }
+        function select() { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+        try {
+          navigator.clipboard.writeText(text).then(done, select);
+        } catch (e) { select(); }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
